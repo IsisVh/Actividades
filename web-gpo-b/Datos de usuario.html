@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Datos de usuario</legend>
+            <!-- Campo de texto -->
+             <p>
+                 <label for="id_nombre">Nombre:</label>
+                 <input type="text" id="id_nombre" name="nombre">
+            </p>
+
+            <!-- Campo de contraseña -->
+             <p>
+                <label>
+                    Contrase&ntildea: &#x1f47D
+                    <input type="password" name="password">
+                </label>
+             </p>
+             <!--campo de contraseña-->
+             <p>
+                <label for="id_correo">Correo electronico</label>
+                <input type="email" id="id_correo" name="email"required>
+             </p>
+             </fieldset>
+                  <!--campo de numero-->  
+                </p>
+                <label for="id_edad">Edad:</label>
+                <input type="number" id="id_edad" name="edad" min="1" max="112">
+            </label>
+            </p>
+            <!--campo de numero-->
+            <p>
+                <label for ="id_fecha">Fecha de nacimiento:</label>
+                <input type="date" id="id_fecha" name="fecha">
+            </p>
+            <!--campo de hora--> 
+            <p>
+                <label>
+                    Hora de cita:
+                    <input type="time" name="hora">
+                </label>
+            </p>
+            <!--campo de seleccion--> 
+            <p>
+                <label>
+                    pa&iacutes:
+                    <select name="pais">
+                        <option value="">Seleccione...</option>
+                        <option value="es">Espa&ntildea</option>
+                        <option value="mx">M&eacutexico</option>
+                        <option value="co">Colombia</option>
+                    </select>
+                </label>
+            </p>
+            <!--campo de radio--> 
+            <p>
+                <label>
+                    G&eacutenero:
+                    <input type="radio" id="id_masculino" name="genero" value="masculino">
+                    <label for="id masculino">Masculino</label>
+                    <input type="radio" id="id_femenino" name="genero" value="femenino">
+                    <label for="id femenino">Femenino</label>
+                </label>
+            </p>
+            <!--casilla de verificacion-->
+            <p>
+                <label>
+                    Intereses
+                    <input type="checkbox" id="deportes" name="intereses" value="deportes">
+                    <label for="deportes">Deportes</label>
+                    <input type="checkbox" id="musica" name="intereses" value="muisca">
+                    <label for="musica">Musica</label>
+                    <input type="checkbox" id="lectura" name="intereses" value="lectura">
+                    <label for="lectura">Lectura</label>
+                </label>
+            </p>
+            <!--campo de archivo-->
+            <p>
+                <label>
+                    Archivo:
+                    <input type="file" name="archivo">
+                </label>
+            </p>
+            <!--area de texto-->
+            <label>
+                Comentarios: <br>
+                <textarea name="comentarios" rows="10" cols="100" >Escribe aqui... </textarea>
+            </label>
+            <p>
+                <!--botones-->
+                <p>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Reestablecer</button>
+                </p>
+            </p>
+        </form>
+    </body>
+</html>
