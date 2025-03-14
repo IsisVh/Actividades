@@ -1,0 +1,90 @@
+body {
+    
+    background: linear-gradient(0deg, #a05f03 15%, #ffffff 91%);
+
+    /*
+    margin-top:20px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+     
+    Modo en una sola linea */
+    margin: 20px 100px 50px 100px
+
+}
+
+img {
+    padding: 20px;
+    width: 400px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #a05f03 15%, #ffffff 91%);
+}
+
+.imagen-div{
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: console, sans-serif;
+    color: purple;
+    font-size: 50px;
+    text-shadow: 5px 5px 10px #ff4d00;
+}
+
+.intro {
+    background: black;
+    color: white;
+    font-size: 24px;
+    padding: 25px;
+}
+
+.nav {
+    font-size: 24px;
+    margin-top: 50px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a{
+    color:white;
+    background: #13;
+    padding: 5px;
+    text-decoration:none;
+}
+
+.nav a:link{
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+
+
+}
+.nav a:visited {
+background-color: purple;
+
+}
+.nav a:hover {
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline;
+
+}
+.nav a:active {
+    color: red;
+}
+#manzana-card{
+    color: red;
+    padding: 20px;
+    margin: 10px;
+    background: darkblue;
+}
