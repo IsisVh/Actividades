@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagar con Stripe</title>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <h2>Pagar $50.00 USD</h2>
+  <form id="payment-form">
+    <div id="card-element"></div>
+    <button type="submit">Pagar</button>
+    <div id="payment-result"></div>
+  </form>
+
+  <script>
+    const stripe = Stripe('pk_test_51RLvY42Y6uPdK5HhbBxNf7hJFr8swo1E4pZ48dnd5fwS9mv3c1mwcjNF3BKcDYaSHE3XScAeQBZWHJFCkaW0vKVc00r4L01fgo'); 
+
+    const elements = stripe.elements();
+    const card = elements.create('card');
+    card.mount('#card-element');
+
+    const form = document.getElementById('payment-form');
+    const resultDiv = document.getElementById('payment-result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const res = await fetch('/create-payment-intent', { method: 'POST' });
+      const { clientSecret } = await res.json();
+
+      const result = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+        }
+      });
+
+      if (result.error) {
+        resultDiv.textContent = 'Error: ' + result.error.message;
+      } else {
+        if (result.paymentIntent.status === 'succeeded') {
+          resultDiv.textContent = 'Pago exitoso 🎉';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

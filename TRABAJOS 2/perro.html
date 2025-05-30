@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Imágenes Aleatorias de Perros</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #8734db;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #8734db;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐶 Imagen Aleatoria de un Perro</h1>
+  <button onclick="cargarImagen()">Cargar otra imagen</button>
+  <br>
+  <img id="dogImage" src="" alt="Imagen de un perro" />
+
+  <script>
+    async function cargarImagen() {
+      try {
+        const respuesta = await fetch('https://dog.ceo/api/breeds/image/random');
+        const datos = await respuesta.json();
+        document.getElementById('dogImage').src = datos.message;
+      } catch (error) {
+        alert("No se pudo cargar la imagen. Intenta de nuevo.");
+        console.error(error);
+      }
+    }
+
+    // Cargar una imagen al cargar la página
+    window.onload = cargarImagen;
+  </script>
+
+</body>
+</html>

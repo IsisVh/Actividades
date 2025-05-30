@@ -1,0 +1,61 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even){
+    background-color: rgb(197, 197, 197);
+}
+
+form{
+    color: magenta;
+}
+
+h2{
+    color: magenta;
+}
+
+input{
+    height: 200px;
+    width: 200px;
+}
+
+#id{
+    background-color: red;
+}
+
+#nombre{
+    background-color: orange;
+}
+
+#apellido{
+    background-color: yellow;
+}
+
+#correo{
+    background-color: green;
+}
+
+#telefono{
+    background-color: blue;
+}
+
+#comentario{
+    background-color: blueviolet;
+}
+
+button{
+    height: 200px;
+    width: 200px;
+    background-color: cyan;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dato Curioso de Gatos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #444;
+    }
+
+    .fact {
+      font-size: 1.5em;
+      margin: 30px auto;
+      max-width: 600px;
+      background-color: #fefefe;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #b822e6;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b822e6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐱 Dato Curioso sobre Gatos</h1>
+  <div class="fact" id="catFact">Cargando dato...</div>
+  <button onclick="cargarDato()">Otro dato</button>
+
+  <script>
+    async function cargarDato() {
+      try {
+        const respuesta = await fetch('https://catfact.ninja/fact');
+        const datos = await respuesta.json();
+        document.getElementById('catFact').textContent = datos.fact;
+      } catch (error) {
+        document.getElementById('catFact').textContent = 'No se pudo cargar el dato. Intenta de nuevo.';
+        console.error(error);
+      }
+    }
+
+    // Cargar un dato al inicio
+    window.onload = cargarDato;
+  </script>
+
+</body>
+</html>

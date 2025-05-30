@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+.cell .taken {
+    pointer-events: none;
+}
+
+#winner {
+    font-size: 1.5em;
+    color: rgb(235, 5, 5);
+}
+[7:26 p.m., 20/3/2025] Mau: const board=document.querySelector('.board');
+const cells=document.querySelectorAll('.cell');
+const display=document.getElementById('winner');
+
+let currentPlayer="X";
+let gameActive= true;
+let boardState=['','','','','','','','',''];
+
+function hayGanador(){
+    const combinacionesGanadoras=[
+        [0,1,2], [3,4,5], [6,7,8],
+        [0,3,6], [2,5,8], [1,4,7],
+        [0,4,8], [2,4,6]
+    ];
+
+    for (const combinacion of combinacionesGanadoras){
+        const [a,b,c]=combinacion;
+        if (boardState[a] && boardState[a]===boardState[b] && boardState[a]===boardState[c]){
+            return boardState[a];
+        }
+    }
+    return null;
+}
